@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVC Desarrollo Digital | Software a la medida</title>
+    
+    <!-- Meta etiquetas para redes sociales (Previsualización) -->
+    <meta property="og:title" content="LVC Desarrollo Digital | Software a la medida">
+    <meta property="og:description" content="Tu negocio no debería ser un dolor de cabeza. Diseñamos sistemas de venta y gestión personalizados. Toma el control total.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon (Icono de la pestaña) -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            background-color: #0f172a; 
+            color: white; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+        }
+        
+        /* Textos Neón / Gradientes */
+        .text-gradient { 
+            background-clip: text; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-image: linear-gradient(to right, #10b981, #0ea5e9); 
+        }
+        
+        /* Efecto de Cristal (Glassmorphism) */
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Efecto 3D para tarjetas */
+        .card-3d-container {
+            perspective: 1000px;
+        }
+        .card-3d {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+        }
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
+            box-shadow: 25px 25px 40px rgba(0, 0, 0, 0.6), -10px -10px 25px rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        /* Botón 3D Normal */
+        .btn-3d {
+            box-shadow: 0 10px 20px -10px rgba(16, 185, 129, 0.8);
+            transition: all 0.3s ease;
+        }
+        .btn-3d:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 25px -10px rgba(16, 185, 129, 1);
+        }
+
+        /* Botón WhatsApp Flotante */
+        .wa-flotante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .wa-flotante:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.7);
+        }
+        .wa-icon {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="fixed w-full z-50 glassmorphism border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-2 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <!-- Logo de Navbar MÁS GRANDE -->
+                <img src="logo.png" alt="Logo LVC" class="w-24 md:w-32 h-auto object-contain drop-shadow-[0_0_12px_rgba(16,185,129,0.5)]">
+                <div class="flex flex-col">
+                    <span class="font-black tracking-widest text-base uppercase leading-none text-emerald-400">Desarrollo</span>
+                    <span class="font-bold tracking-widest text-sm uppercase text-slate-300">Digital</span>
+                </div>
+            </div>
+            <a href="https://wa.me/529214187489" target="_blank" class="bg-emerald-500 text-slate-900 font-bold px-6 py-2.5 rounded-full btn-3d hidden sm:block">
+                Contacto
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) CON VIDEO DE FONDO -->
+    <header class="relative pt-48 pb-32 px-6 flex flex-col items-center text-center overflow-hidden min-h-[85vh] justify-center">
+        <!-- Video de Fondo -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60">
+            <source src="digitalvideo.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        
+        <!-- Capa oscura (Overlay) -->
+        <div class="absolute inset-0 bg-slate-900/60 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent z-10"></div>
+
+        <!-- Contenido Frontal -->
+        <div class="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-2xl">
+                Tu negocio no debería <br /> ser un <span class="text-gradient">dolor de cabeza.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-4xl leading-relaxed drop-shadow-lg">
+                El mundo es digital, ¿tu negocio también? Eleva la eficiencia de tu empresa con las soluciones de software de <strong>LVC Desarrollo Digital</strong>. Diseñamos herramientas personalizadas para que tú te dediques a lo más importante: vender y crecer.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+                <a href="https://wa.me/529214187489" target="_blank" class="bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-900 font-black px-10 py-4 rounded-xl text-lg btn-3d border border-emerald-400 flex items-center justify-center gap-2">
+                    Da el paso hoy mismo
+                </a>
+                <a href="https://www.facebook.com/share/1EWnVCjD2L/" target="_blank" class="glassmorphism text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-white/10 transition-colors border border-slate-700">
+                    Ver Proyectos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section class="py-20 px-6 max-w-6xl mx-auto relative z-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black mb-4">Innovación que se adapta a ti</h2>
+            <p class="text-slate-400 text-lg">Tecnología de vanguardia y herramientas que trabajan para tu beneficio.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 card-3d-container">
+            <div class="card-3d glassmorphism rounded-2xl p-8 border-t-4 border-t-emerald-500 flex flex-col items-center text-center">
+                <div class="w-full h-56 rounded-xl mb-6 flex items-center justify-center overflow-hidden border border-slate-700 shadow-inner bg-slate-800">
+                    <img src="puntodeventa.png" alt="Punto de Venta LVC" class="w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Sistemas Punto de Venta</h3>
+                <p class="text-slate-400">Cobro rápido, control de inventarios exacto y reportes de utilidad. Deja el papel y lápiz en el pasado.</p>
+            </div>
+
+            <div class="card-3d glassmorphism rounded-2xl p-8 border-t-4 border-t-blue-500 flex flex-col items-center text-center">
+                <div class="w-full h-56 rounded-xl mb-6 flex items-center justify-center overflow-hidden border border-slate-700 shadow-inner bg-slate-800">
+                    <img src="gym.png" alt="Gym Control LVC" class="w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Gym Control</h3>
+                <p class="text-slate-400">Administra membresías, valida accesos rápidamente y controla tu tienda interna desde una sola pantalla.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CASOS DE ÉXITO -->
+    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-800/50 relative z-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black mb-4">Sistemas operando en el mundo real</h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">Nuestros clientes ya automatizan sus ventas, controlan mermas y revisan sus ganancias desde la palma de su mano.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glassmorphism rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-8 border-l-4 border-l-orange-500 hover:bg-slate-800/40 transition-colors">
+                <div class="w-40 flex-shrink-0">
+                    <img src="chilapayinmovil.jpg" alt="Sistema El Chilpayin" class="w-full h-auto rounded-xl shadow-[0_10px_30px_rgba(249,115,22,0.2)] border border-slate-700">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Asadero El Chilpayin</h3>
+                    <p class="text-slate-400 mb-4 text-sm leading-relaxed">Sistema web a la medida con control exacto de pollos y complementos. Cálculo automático de utilidad neta y exportación de reportes de venta y stock.</p>
+                    <span class="inline-block text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1.5 rounded-full">Caso de Éxito Real</span>
+                </div>
+            </div>
+
+            <div class="glassmorphism rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-8 border-l-4 border-l-red-500 hover:bg-slate-800/40 transition-colors">
+                <div class="w-40 flex-shrink-0">
+                    <img src="lupitamovil.jpg" alt="Sistema Asadero Lupita" class="w-full h-auto rounded-xl shadow-[0_10px_30px_rgba(239,68,68,0.2)] border border-slate-700">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Asadero Lupita</h3>
+                    <p class="text-slate-400 mb-4 text-sm leading-relaxed">Plataforma móvil con registro ágil de ventas locales y a domicilio. Integración de gastos operativos diarios y cuadre de caja perfecto diseñado para su menú.</p>
+                    <span class="inline-block text-xs font-black uppercase tracking-widest text-red-500 bg-red-500/10 px-3 py-1.5 rounded-full">Desarrollo a la medida</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN FAQ -->
+    <section class="py-20 px-6 max-w-4xl mx-auto border-t border-slate-800/50 relative z-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-black mb-4">Preguntas Frecuentes</h2>
+            <p class="text-slate-400 text-lg">Resolvemos tus dudas para que des el paso con seguridad.</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="glassmorphism p-6 rounded-xl border border-slate-700">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">¿Es difícil de usar si no sé de tecnología?</h3>
+                <p class="text-slate-400">Para nada. Diseñamos nuestras interfaces para que sean tan fáciles de usar como una aplicación en tu celular. Además, te damos capacitación completa.</p>
+            </div>
+            <div class="glassmorphism p-6 rounded-xl border border-slate-700">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">¿Necesito internet para que funcione?</h3>
+                <p class="text-slate-400">Depende de lo que necesites. Ofrecemos sistemas web en la nube (para ver desde tu celular en cualquier lugar) y versiones locales que operan 100% sin internet.</p>
+            </div>
+            <div class="glassmorphism p-6 rounded-xl border border-slate-700">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">¿Qué pasa si tengo un problema técnico?</h3>
+                <p class="text-slate-400">Nuestra mayor ventaja es el soporte. No hablas con máquinas de servicio al cliente, hablas directo por WhatsApp con los desarrolladores que crearon tu sistema.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CON MARCA DE AGUA Y LOGO GIGANTE -->
+    <footer class="relative border-t border-slate-800 mt-10 py-24 text-center bg-slate-900/80 overflow-hidden z-20 pb-32">
+        <!-- Marca de agua de fondo (Gigante y transparente) -->
+        <img src="logo.png" alt="Marca de agua" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1200px] opacity-5 pointer-events-none">
+        
+        <!-- Contenido principal del Footer -->
+        <div class="relative z-10 flex flex-col items-center px-6">
+            <!-- LOGO A TODO COLOR GIGANTE -->
+            <img src="logo.png" alt="LVC Desarrollo Digital" class="w-64 md:w-96 mb-10 drop-shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:scale-105 transition duration-500">
+            
+            <h2 class="text-3xl md:text-4xl font-black mb-8 text-slate-200">¿Listo para tomar el control de tu negocio?</h2>
+            <a href="https://wa.me/529214187489" target="_blank" class="inline-block bg-emerald-500 text-slate-900 font-black px-10 py-4 rounded-full mb-12 hover:bg-emerald-400 hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+                Contactar a Soporte LVC
+            </a>
+            
+            <p class="text-slate-500 font-bold uppercase tracking-widest text-xs border-t border-slate-800 pt-8 w-full max-w-2xl mx-auto">
+                LVC Desarrollo Digital © 2026 | Lo adaptamos a tu negocio
+            </p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/529214187489" target="_blank" class="wa-flotante">
+        <svg class="wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        Cotizar Sistema
+    </a>
+
+</body>
+</html>
